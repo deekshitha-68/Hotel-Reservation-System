@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your hotel room. Enter your details and confirm your reservation.">
+    <title>Book a Room — HotelBook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-building"></i> HotelBook</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my-bookings.html">My Bookings</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h2><i class="bi bi-bookmark-plus"></i> Book Your Room</h2>
+            </div>
+        </div>
+
+        <div class="container mb-5">
+            <div id="errorContainer"></div>
+            <div class="row g-4">
+                <!-- Booking Form -->
+                <div class="col-lg-7">
+                    <div class="info-card">
+                        <h5><i class="bi bi-person-fill"></i> Guest Details</h5>
+                        <form id="bookingForm">
+                            <div class="mb-3">
+                                <label for="customerName" class="form-label fw-semibold">Full Name *</label>
+                                <input type="text" class="form-control" id="customerName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="customerEmail" class="form-label fw-semibold">Email Address *</label>
+                                <input type="email" class="form-control" id="customerEmail" placeholder="your.email@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="customerPhone" class="form-label fw-semibold">Phone Number *</label>
+                                <input type="tel" class="form-control" id="customerPhone" placeholder="+91 98765 43210" required>
+                            </div>
+
+                            <!-- Dates (pre-filled from query params, but editable) -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-4">
+                                    <label for="checkIn" class="form-label fw-semibold">Check-in *</label>
+                                    <input type="date" class="form-control" id="checkIn" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="checkOut" class="form-label fw-semibold">Check-out *</label>
+                                    <input type="date" class="form-control" id="checkOut" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="guests" class="form-label fw-semibold">Guests *</label>
+                                    <input type="number" class="form-control" id="guests" min="1" value="1" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100 mt-2" id="submitBtn">
+                                <i class="bi bi-check-circle"></i> Confirm Booking
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Room & Price Summary -->
+                <div class="col-lg-5">
+                    <div id="roomSummary">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-success" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2024 HotelBook — Hotel Reservation System | CodeAlpha Internship Project</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

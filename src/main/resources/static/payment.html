@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your hotel room payment.">
+    <title>Payment — HotelBook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-building"></i> HotelBook</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my-bookings.html">My Bookings</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h2><i class="bi bi-credit-card"></i> Payment</h2>
+            </div>
+        </div>
+
+        <div class="container mb-5">
+            <div id="errorContainer"></div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <!-- Reservation Summary -->
+                    <div id="reservationSummary">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-success" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Form -->
+                    <div class="info-card mt-4" id="paymentFormCard" style="display: none;">
+                        <h5><i class="bi bi-wallet2"></i> Select Payment Method</h5>
+                        <form id="paymentForm">
+                            <div class="d-flex flex-column gap-3 mb-4">
+                                <label class="payment-method-option d-flex align-items-center gap-3">
+                                    <input type="radio" name="paymentMethod" value="UPI" class="form-check-input" checked>
+                                    <span class="payment-method-label">
+                                        <i class="bi bi-phone fs-4"></i>
+                                        <span class="ms-2 fw-semibold">UPI</span>
+                                        <small class="d-block text-muted ms-4">Pay using any UPI app</small>
+                                    </span>
+                                </label>
+                                <label class="payment-method-option d-flex align-items-center gap-3">
+                                    <input type="radio" name="paymentMethod" value="CARD" class="form-check-input">
+                                    <span class="payment-method-label">
+                                        <i class="bi bi-credit-card fs-4"></i>
+                                        <span class="ms-2 fw-semibold">Card</span>
+                                        <small class="d-block text-muted ms-4">Credit or Debit card</small>
+                                    </span>
+                                </label>
+                                <label class="payment-method-option d-flex align-items-center gap-3">
+                                    <input type="radio" name="paymentMethod" value="CASH" class="form-check-input">
+                                    <span class="payment-method-label">
+                                        <i class="bi bi-cash-stack fs-4"></i>
+                                        <span class="ms-2 fw-semibold">Cash</span>
+                                        <small class="d-block text-muted ms-4">Pay at the hotel front desk</small>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100" id="payBtn">
+                                <i class="bi bi-lock-fill"></i> Pay Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2024 HotelBook — Hotel Reservation System | CodeAlpha Internship Project</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/payment.js"></script>
+</body>
+</html>

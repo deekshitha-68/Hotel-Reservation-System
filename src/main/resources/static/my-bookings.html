@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your hotel bookings. Look up reservations by email address.">
+    <title>My Bookings — HotelBook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-building"></i> HotelBook</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="my-bookings.html">My Bookings</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h2><i class="bi bi-list-check"></i> My Bookings</h2>
+            </div>
+        </div>
+
+        <div class="container mb-5">
+            <!-- Email Lookup Form -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <h5><i class="bi bi-search"></i> Look Up Your Bookings</h5>
+                        <form id="lookupForm">
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="emailInput"
+                                       placeholder="Enter your email address" required>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-search"></i> Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="errorContainer"></div>
+            <div id="bookingsContainer"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2024 HotelBook — Hotel Reservation System | CodeAlpha Internship Project</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/my-bookings.js"></script>
+</body>
+</html>
